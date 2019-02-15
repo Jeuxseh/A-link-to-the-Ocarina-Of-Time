@@ -41,13 +41,13 @@ const main = ()=>{
 
         const setPlayerMovement = (event)=>{
             if(event.code==='ArrowUp'){
-                game.player.speedY= -5;
+                game.player.speedY= -7;
             }else if(event.code==='ArrowDown'){
-                game.player.speedY= 5;
+                game.player.speedY= 7;
             }else if(event.code==='ArrowLeft'){
-                game.player.speedX= -5;
+                game.player.speedX= -7;
             }else if(event.code==='ArrowRight'){
-                game.player.speedX= 5;
+                game.player.speedX= 7;
             }
         }
 

@@ -16,7 +16,7 @@ class Game{
         this.trampaSierra1= new Trampasierra(this.canvas);
 
         const loop =()=>{
-            console.log("hola");
+            console.log();
 
 
             this.checkAllCollisions();
@@ -37,6 +37,7 @@ class Game{
 
     updateCanvas(){
         this.player.update();
+        this.trampaSierra1.update();
     };
 
     clearCanvas(){

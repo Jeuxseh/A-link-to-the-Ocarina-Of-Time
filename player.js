@@ -2,11 +2,11 @@
 class Player{
     constructor(canvas,lives){
         this.points=0;
-        this.size=30;
+        this.size=40;
         this.canvas=canvas;
         this.ctx= this.canvas.getContext('2d');
         this.x= this.canvas.width/2;
-        this.y=(this.canvas.height/2)+250;
+        this.y=250+this.canvas.height/2;
         this.speedX=0;
         this.speedY=0;
         this.direction=0;
@@ -28,17 +28,17 @@ class Player{
     checkScreen(){
         if(this.y - this.size/2<=0 ){
             this.speedY=0;
-            this.y+=5;
+            this.y+=7;
         }else if(this.y+this.size/2>=this.canvas.height){
             this.speedY=0;
-            this.y-=5
+            this.y-=7
         }
         if(this.x -this.size/2<=0){
             this.speedX=0;
-            this.x+=5;
+            this.x+=7;
         }else if(this.x+this.size/2>=this.canvas.width){
             this.speedX=0;
-            this.x-=5;
+            this.x-=7;
         }
 
     }
@@ -52,7 +52,7 @@ class Player{
             return true;
         }
         return false;
-        
+
     }
 
     
