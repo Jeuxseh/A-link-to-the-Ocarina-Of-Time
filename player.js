@@ -6,7 +6,7 @@ class Player{
         this.canvas=canvas;
         this.ctx= this.canvas.getContext('2d');
         this.x= this.canvas.width/2;
-        this.y=250+this.canvas.height/2;
+        this.y=200 +this.canvas.height/2;
         this.speedX=0;
         this.speedY=0;
         this.direction=0;
@@ -75,7 +75,7 @@ class Player{
     }
 
     getPoints(){
-        this.points+=10;
+        this.points+=1;
     }
 
 

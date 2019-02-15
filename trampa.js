@@ -1,26 +1,32 @@
 'use strict';
 
 class Trampasierra{
-    constructor(canvas){
+    constructor(canvas,x,y){
         this.size=50;
         this.canvas=canvas;
         this.ctx=this.canvas.getContext('2d');
-        this.x=120 ;
-        this.y=120;
-        this.speed=20;
+        this.x=x ;
+        this.y=y;
+        this.speed=10;
     }
 
 
-    update(){
-        if(this.x<700 && this.y===120){
-           this.x+=this.speed;
-          }else if(this.x===700 && this.y<400){
-            this.y+=this.speed;
-          }else if(this.y===400 && this.x>120){
-            this.x-=this.speed;
-          } else if(this.x===120 && this.y>120){
-            this.y-=this.speed;
+    update(x,y){
+    
+           if(this.x<x+470 && this.y===y){
+                 this.x+=this.speed;
+           
+          }else if(this.x===x+470 && this.y< y+200){
+                this.y+=this.speed;
+           
+          }else if(this.y===y+200 && this.x>x){
+                this.x-=this.speed;
+           
+          } else {
+                this.y-=this.speed;
             }
+            console.log(this.x,this.y);
+            this.draw();
           }
         
 

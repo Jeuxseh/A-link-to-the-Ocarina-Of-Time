@@ -13,7 +13,10 @@ class Game{
 
         this.player=new Player(this.canvas,6);
         this.coin=new Coin(this.canvas);
-        this.trampaSierra1= new Trampasierra(this.canvas);
+        this.trampaSierra1= new Trampasierra(this.canvas,100,200);
+        this.trampaSierra2= new Trampasierra(this.canvas,400,50);
+        this.trampaSierra3= new Trampasierra(this.canvas,700,200);
+        this.trampaSierra4= new Trampasierra(this.canvas,400,350);
 
         const loop =()=>{
 
@@ -32,10 +35,16 @@ class Game{
 
 
     };
+    updateCoinCanvas(){
+        this.coin.update();
+    }
 
     updateCanvas(){
         this.player.update();
-        this.trampaSierra1.update();
+        this.trampaSierra1.update(100,200);
+        this.trampaSierra2.update(400,50);
+        this.trampaSierra3.update(700,200);
+        this.trampaSierra4.update(400,350);
     };
 
     clearCanvas(){
@@ -46,6 +55,9 @@ class Game{
         this.player.draw();
         this.coin.draw();
         this.trampaSierra1.draw();
+        this.trampaSierra2.draw();
+        this.trampaSierra3.draw();
+        this.trampaSierra4.draw();
     }
     
     checkAllCollisions(){
@@ -57,10 +69,35 @@ class Game{
                 this.onGameOver();
             }
         }
+        if(this.player.checkTrap(this.trampaSierra2)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkTrap(this.trampaSierra3)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkTrap(this.trampaSierra4)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
         if(this.player.checkCoin(this.coin)){
             this.player.getPoints();
-            this.isGameOver=true;
-            this.onWin();
+            this.coin.update();
+            this.coin.draw();
+            if(this.player.points>5){
+                this.isGameOver=true;
+                this.onWin();
+            }
         }
     }
 

@@ -10,7 +10,10 @@ class Coin{
         
     }
     ;
-    checkInScreen(){
+    update(){
+        this.x=Math.floor(Math.random()*(this.canvas.width-100))+50;
+        this.y=Math.floor(Math.random()*(this.canvas.height-100))+50;
+        console.log(this.x,this.y);
 
     };
 
