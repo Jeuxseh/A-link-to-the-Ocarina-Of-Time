@@ -16,12 +16,10 @@ class Game{
         this.trampaSierra1= new Trampasierra(this.canvas);
 
         const loop =()=>{
-            console.log();
 
-
-            this.checkAllCollisions();
             this.updateCanvas();
             this.clearCanvas();
+            this.checkAllCollisions();
             this.drawCanvas();
 
             if(!this.isGameOver){
@@ -55,19 +53,23 @@ class Game{
         if(this.player.checkTrap(this.trampaSierra1)){
             this.player.loseLive();
             if(this.player.lives===0){
-                this.GameOver=true;
+                this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkCoin(this.coin)){
             this.player.getPoints();
             this.isGameOver=true;
-            this.onGameOver();
+            this.onWin();
         }
     }
 
-     gameOverCallback(callback){
+    gameOverCallback(callback){
         this.onGameOver=callback;
+    }
+
+    winCallback(callback){
+        this.onWin=callback;
     }
 
 

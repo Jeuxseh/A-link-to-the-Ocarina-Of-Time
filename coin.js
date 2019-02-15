@@ -16,7 +16,7 @@ class Coin{
 
     draw(){
         this.ctx.fillStyle='blue';
-        this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size/2,this.size/2)
+        this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size,this.size)
 
     }
 }

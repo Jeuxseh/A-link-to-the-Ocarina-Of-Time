@@ -37,6 +37,7 @@ const main = ()=>{
         const game = new Game(canvasElement);
 
         game.gameOverCallback(buildGameOver);
+        game.winCallback(buildWin);
         game.startLoop();
 
         const setPlayerMovement = (event)=>{
@@ -72,6 +73,17 @@ const main = ()=>{
         const gameOverScreen=buildDom(`
             <section class="game-over">
                 <h1>Game Over Screen</h1>
+                <button>Restart</button>
+            </section>
+        `);
+        const restartButton = document.querySelector('button');
+        restartButton.addEventListener('click',buildGameScreen);
+    }
+
+    const buildWin=()=>{
+        const winScreen=buildDom(`
+            <section class="win">
+                <h1>Win Screen</h1>
                 <button>Restart</button>
             </section>
         `);
