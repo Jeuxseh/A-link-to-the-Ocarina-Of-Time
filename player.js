@@ -1,4 +1,6 @@
 'use strict';
+
+
 class Player{
     constructor(canvas,lives){
         this.points=0;
@@ -9,9 +11,9 @@ class Player{
         this.y=200 +this.canvas.height/2;
         this.speedX=0;
         this.speedY=0;
-        this.direction=0;
         this.lives=lives;
         this.orientation='N';
+        this.attacking=[];
     }
 
     update(){
@@ -24,11 +26,14 @@ class Player{
     draw(){
         this.ctx.fillStyle='green';
         this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size);
+        if (this.attacking[0]) {
+            this.attacking[0].draw();
+        }
     }
 
     checkScreen(){
         if(this.y - this.size/2<=0 ){
-            this.speedY=0;
+            this.speedY = 0;
             this.y+=7;
         }else if(this.y+this.size/2>=this.canvas.height){
             this.speedY=0;
@@ -55,7 +60,36 @@ class Player{
         return false;
 
     }
-    attack(){
+    playerAttack(){
+        const attack = new Attack(this.canvas);
+        this.attacking.push(attack);
+    
+        switch(this.orientation){
+            case 'N':
+                attack.update(this.x,this.y-this.size);
+                setTimeout(() => {
+                    this.attacking.splice(0,1)
+                },50);
+            break;
+            case 'E':
+                attack.update(this.x+this.size,this.y);
+                setTimeout(() => {
+                    this.attacking.splice(0,1)
+                },50);
+            break;
+            case 'S':
+                attack.update(this.x,this.y+this.size);
+                setTimeout(() => {
+                    this.attacking.splice(0,1)
+                },50);
+            break;
+            case 'W':
+                attack.update(this.x-this.size,this.y);
+                setTimeout(() => {
+                    this.attacking.splice(0,1)
+                },50);
+            break;
+        }
         
 
     }

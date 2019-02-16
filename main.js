@@ -10,7 +10,7 @@ const main = ()=>{
 
         const splashScreen=buildDom(`
             <section class="splash-screen">
-                <h1>A link to the Ocarina Of time</h1>
+                <h1>A link to the Ocarina Of Seasons</h1>
                 <button>Start</button>
             </section>
         `)
@@ -21,8 +21,12 @@ const main = ()=>{
     const buildGameScreen=()=>{
         const gameScreen =buildDom(`
             <nav class="game-nav">
-                <p class="score>score </p>
-                <p class="lives">lives</p>
+                <div class="lives">
+                    Lives
+                </div>
+                <div class="score">
+                    score
+                </div>
             </nav>
             <section class="game-screen">
                 <canvas></canvas>
@@ -35,13 +39,20 @@ const main = ()=>{
 
         canvasElement.setAttribute('width',width);
         canvasElement.setAttribute('height',height);
-       // setTimeout(buildGameOver,3000);
 
         const game = new Game(canvasElement);
 
         game.gameOverCallback(buildGameOver);
         game.winCallback(buildWin);
         game.startLoop();
+
+        const setPlayerAttack =(event)=>{
+           
+            if(event.code==="Space"){
+                game.player.playerAttack();
+            }
+
+        }
 
         const setPlayerMovement = (event)=>{
             if(event.code==='ArrowUp'){
@@ -69,10 +80,11 @@ const main = ()=>{
             }else if(event.code==='ArrowRight'){
                 game.player.speedX= 0;
             }
-        }
-
+        } 
+        document.addEventListener('keydown',setPlayerAttack);
         document.addEventListener('keydown',setPlayerMovement);
         document.addEventListener('keyup',unSetPlayerMovement);
+
 
     }
 
@@ -80,7 +92,7 @@ const main = ()=>{
         const gameOverScreen=buildDom(`
             <section class="game-over">
                 <h1>Game Over Screen</h1>
-                <button>Restart</button>
+                <button>Retry</button>
             </section>
         `);
         const restartButton = document.querySelector('button');
@@ -95,7 +107,7 @@ const main = ()=>{
             </section>
         `);
         const restartButton = document.querySelector('button');
-        restartButton.addEventListener('click',buildGameScreen);
+        restartButton.addEventListener('click',buildSplashScreen);
     }
 
     buildSplashScreen();

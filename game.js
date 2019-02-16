@@ -6,6 +6,8 @@ class Game{
         this.ctx=this.canvas.getContext('2d');
         this.player;
         this.coin;
+        this.attacks=[];
+        //tendria que crearle una propiedad de trampa???????????????????????????????????
         this.isGameOver=false;
     };
 
@@ -40,6 +42,9 @@ class Game{
     }
 
     updateCanvas(){
+        this.attacks.forEach((attack,index)=>{
+
+        })
         this.player.update();
         this.trampaSierra1.update(115,185);
         this.trampaSierra2.update(415,35);

@@ -11,8 +11,8 @@ class Coin{
     }
     ;
     update(){
-        this.x=Math.floor(Math.random()*(this.canvas.width-100))+50;
-        this.y=Math.floor(Math.random()*(this.canvas.height-100))+50;
+        this.x=Math.floor(Math.random()*(this.canvas.width-140))+70;
+        this.y=Math.floor(Math.random()*(this.canvas.height-140))+70;
         console.log(this.x,this.y);
 
     };

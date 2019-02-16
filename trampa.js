@@ -25,7 +25,7 @@ class Trampasierra{
           } else {
                 this.y-=this.speed;
             }
-            console.log(this.x,this.y);
+            
             this.draw();
           }
         
