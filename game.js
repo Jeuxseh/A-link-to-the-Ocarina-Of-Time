@@ -13,10 +13,10 @@ class Game{
 
         this.player=new Player(this.canvas,6);
         this.coin=new Coin(this.canvas);
-        this.trampaSierra1= new Trampasierra(this.canvas,100,200);
-        this.trampaSierra2= new Trampasierra(this.canvas,400,50);
-        this.trampaSierra3= new Trampasierra(this.canvas,700,200);
-        this.trampaSierra4= new Trampasierra(this.canvas,400,350);
+        this.trampaSierra1= new Trampasierra(this.canvas,115,185);
+        this.trampaSierra2= new Trampasierra(this.canvas,415,35);
+        this.trampaSierra3= new Trampasierra(this.canvas,715,185);
+        this.trampaSierra4= new Trampasierra(this.canvas,415,335);
 
         const loop =()=>{
 
@@ -41,10 +41,10 @@ class Game{
 
     updateCanvas(){
         this.player.update();
-        this.trampaSierra1.update(100,200);
-        this.trampaSierra2.update(400,50);
-        this.trampaSierra3.update(700,200);
-        this.trampaSierra4.update(400,350);
+        this.trampaSierra1.update(115,185);
+        this.trampaSierra2.update(415,35);
+        this.trampaSierra3.update(715,185);
+        this.trampaSierra4.update(415,335);
     };
 
     clearCanvas(){

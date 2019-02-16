@@ -20,11 +20,14 @@ const main = ()=>{
     }
     const buildGameScreen=()=>{
         const gameScreen =buildDom(`
+            <nav class="game-nav">
+                <p class="score>score </p>
+                <p class="lives">lives</p>
+            </nav>
             <section class="game-screen">
                 <canvas></canvas>
             </section>
         `)
-
         const width=document.querySelector('.game-screen').offsetWidth;
         const height=document.querySelector('.game-screen').offsetHeight;
 
@@ -43,12 +46,16 @@ const main = ()=>{
         const setPlayerMovement = (event)=>{
             if(event.code==='ArrowUp'){
                 game.player.speedY= -7;
+                game.player.orientation='N';
             }else if(event.code==='ArrowDown'){
                 game.player.speedY= 7;
+                game.player.orientation='S';
             }else if(event.code==='ArrowLeft'){
                 game.player.speedX= -7;
+                game.player.orientation='W';
             }else if(event.code==='ArrowRight'){
                 game.player.speedX= 7;
+                game.player.orientation='E';
             }
         }
 

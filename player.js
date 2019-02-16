@@ -11,6 +11,7 @@ class Player{
         this.speedY=0;
         this.direction=0;
         this.lives=lives;
+        this.orientation='N';
     }
 
     update(){
@@ -54,7 +55,10 @@ class Player{
         return false;
 
     }
+    attack(){
+        
 
+    }
     
 
     checkCoin(coin){   
