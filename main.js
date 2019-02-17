@@ -92,10 +92,13 @@ const main = ()=>{
         const gameOverScreen=buildDom(`
             <section class="game-over">
                 <h1>Game Over Screen</h1>
-                <button>Retry</button>
+                <button id="restart">Retry</button>
+                <button id = "main-menu">Main Menu</button>
             </section>
         `);
-        const restartButton = document.querySelector('button');
+        const mainButton = document.getElementById('main-menu');
+        const restartButton = document.getElementById('restart');
+        mainButton.addEventListener('click',buildSplashScreen);
         restartButton.addEventListener('click',buildGameScreen);
     }
 
@@ -103,11 +106,16 @@ const main = ()=>{
         const winScreen=buildDom(`
             <section class="win">
                 <h1>Win Screen</h1>
-                <button>Restart</button>
+                <button id="restart">Restart</button>
+                <button id="main-menu">Main Menu</button>
             </section>
         `);
-        const restartButton = document.querySelector('button');
-        restartButton.addEventListener('click',buildSplashScreen);
+        
+        const mainButton = document.getElementById('main-menu');
+        const restartButton = document.getElementById('restart');
+        mainButton.addEventListener('click',buildSplashScreen);
+        restartButton.addEventListener('click',buildGameScreen);
+
     }
 
     buildSplashScreen();

@@ -14,6 +14,7 @@ class Player{
         this.lives=lives;
         this.orientation='N';
         this.attacking=[];
+     //   this.invincibility=false;
     }
 
     update(){
@@ -49,23 +50,38 @@ class Player{
 
     }
     checkTrap(trap){
-        const collideRight= this.x + this.size/2 > trap.x - trap.size/2;
-        const collideLeft=this.x - this.size/2 < trap.x + trap.size/2;
-        const collideTop=this.y - this.size/2 < trap.y + trap.size/2;
-        const collideBottom=this.y + this.size/2 > trap.y - trap.size/2;
-
+       
+            const collideRight= this.x + this.size/2 > trap.x - trap.size/2;
+            const collideLeft=this.x - this.size/2 < trap.x + trap.size/2;
+            const collideTop=this.y - this.size/2 < trap.y + trap.size/2;
+            const collideBottom=this.y + this.size/2 > trap.y - trap.size/2;
+        
         if(collideRight&&collideLeft&&collideTop&&collideBottom){
             return true;
         }
         return false;
 
     }
-    checkEnemy(enemy){
-        const collideRight= this.x + this.size/2 > enemy.x - enemy.size/2;
-        const collideLeft=this.x - this.size/2 < enemy.x + enemy.size/2;
-        const collideTop=this.y - this.size/2 < enemy.y + enemy.size/2;
-        const collideBottom=this.y + this.size/2 > enemy.y - enemy.size/2;
+    checkBorderTrap(trap){
+        const collideRight= this.x + this.size/2 > trap.x - trap.sizeX/2;
+        const collideLeft=this.x - this.size/2 < trap.x + trap.sizeX/2;
+        const collideTop=this.y - this.size/2 < trap.y + trap.sizeY/2;
+        const collideBottom=this.y + this.size/2 > trap.y - trap.sizeY/2;
+    
+    if(collideRight&&collideLeft&&collideTop&&collideBottom){
+        return true;
+    }
+    return false;
 
+    }
+
+    checkEnemy(enemy){
+     //   if(!this.invincibility){
+            const collideRight= this.x + this.size/2 > enemy.x - enemy.size/2;
+            const collideLeft=this.x - this.size/2 < enemy.x + enemy.size/2;
+            const collideTop=this.y - this.size/2 < enemy.y + enemy.size/2;
+            const collideBottom=this.y + this.size/2 > enemy.y - enemy.size/2;
+  //      }
         if(collideRight&&collideLeft&&collideTop&&collideBottom){
             return true;
         }
@@ -126,7 +142,7 @@ class Player{
     }
 
     getPoints(){
-        this.points+=1;
+        this.points++;
     }
 
 

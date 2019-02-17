@@ -14,19 +14,33 @@ class Game{
     startLoop(){
 
         this.player=new Player(this.canvas,6);
+
         this.coin=new Coin(this.canvas);
+
         this.trampaSierra1= new Trampasierra(this.canvas,115,185);
         this.trampaSierra2= new Trampasierra(this.canvas,415,35);
         this.trampaSierra3= new Trampasierra(this.canvas,715,185);
         this.trampaSierra4= new Trampasierra(this.canvas,415,335);
 
+        this.borderTrap1= new BorderTrap(this.canvas,this.canvas.width/2,0,20,180);
+        this.borderTrap2= new BorderTrap(this.canvas,this.canvas.width/5,0,20,90);
+        this.borderTrap3= new BorderTrap(this.canvas,(this.canvas.width*4)/5,0,20,90);
+
+        this.borderTrap4= new BorderTrap(this.canvas,this.canvas.width-65,this.canvas.height/5,120,20);
+        this.borderTrap5= new BorderTrap(this.canvas,this.canvas.width-40,this.canvas.height/2,70,20);
+        this.borderTrap6= new BorderTrap(this.canvas,this.canvas.width-65,(this.canvas.height*4)/5,120,20);
+
+        this.borderTrap7= new BorderTrap(this.canvas,0,(this.canvas.height)/5,190,20);
+        this.borderTrap8= new BorderTrap(this.canvas,0,this.canvas.height/2,90,20);
+        this.borderTrap9= new BorderTrap(this.canvas,0,(this.canvas.height*4)/5,190,20);
+
         const loop =()=>{
-            if(Math.random()>0.995){
+            if(Math.random()>0.99){
                 const x = Math.random()*this.canvas.width;
                 const y = Math.random()*this.canvas.height;
                 this.enemies.push( new Enemy (this.canvas,x,y))
             }
-
+            
             this.updateCanvas();
             this.clearCanvas();
             this.checkAllCollisions();
@@ -65,10 +79,24 @@ class Game{
     drawCanvas(){
         this.player.draw();
         this.coin.draw();
+
+        this.borderTrap1.draw();
+        this.borderTrap2.draw();
+        this.borderTrap3.draw();
+
+        this.borderTrap4.draw();
+        this.borderTrap5.draw();
+        this.borderTrap6.draw();
+
+        this.borderTrap7.draw();
+        this.borderTrap8.draw();
+        this.borderTrap9.draw();
+
         this.trampaSierra1.draw();
         this.trampaSierra2.draw();
         this.trampaSierra3.draw();
         this.trampaSierra4.draw();
+
         this.enemies.forEach((enemy)=>{
             enemy.draw();
         })
@@ -76,34 +104,117 @@ class Game{
     
     checkAllCollisions(){
         this.player.checkScreen();
-        if(this.player.checkTrap(this.trampaSierra1)){
+    //    if (this.player.invincibility === false ){
+    //        console.log("antes" + this.player.invincibility);
+            if(this.player.checkTrap(this.trampaSierra1)){
+     //       this.player.invincibility=true;
+      //      console.log("despues" + this.player.invincibility);
+      //      setTimeout(this.player.invincibility=false,8000);
+                this.player.loseLive();
+                if(this.player.lives===0){
+                    this.isGameOver=true;
+                    this.onGameOver();
+                }
+            }
+     //   }
+     //   if (!this.player.invincibility){
+            if(this.player.checkTrap(this.trampaSierra2)){
+         //       this.player.invincibility=true;
+       //         setTimeout(this.player.invincibility=false,8000);
+                this.player.loseLive();
+                if(this.player.lives===0){
+                    this.isGameOver=true;
+                    this.onGameOver();
+                }
+            }
+  //       }
+     //   if (!this.player.invincibility){
+            if(this.player.checkTrap(this.trampaSierra3)){   
+        //        this.player.invincibility=true;
+         //       setTimeout(this.player.invincibility=false,8000);
+                this.player.loseLive();
+                if(this.player.lives===0){
+                    this.isGameOver=true;
+                    this.onGameOver();
+                }
+            }
+     //   }
+     //   if (!this.player.invincibility){
+            if(this.player.checkTrap(this.trampaSierra4)){
+        //        this.player.invincibility=true;
+        //        setTimeout(this.player.invincibility=false,8000);
+                this.player.loseLive();
+                if(this.player.lives===0){
+                    this.isGameOver=true;
+                    this.onGameOver();
+                }
+            }
+     //   }
+
+        if(this.player.checkBorderTrap(this.borderTrap1)){
             this.player.loseLive();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
-        if(this.player.checkTrap(this.trampaSierra2)){
+        if(this.player.checkBorderTrap(this.borderTrap2)){
             this.player.loseLive();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
-        if(this.player.checkTrap(this.trampaSierra3)){
+        if(this.player.checkBorderTrap(this.borderTrap3)){
             this.player.loseLive();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
-        if(this.player.checkTrap(this.trampaSierra4)){
+        if(this.player.checkBorderTrap(this.borderTrap4)){
             this.player.loseLive();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
+        if(this.player.checkBorderTrap(this.borderTrap5)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkBorderTrap(this.borderTrap6)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkBorderTrap(this.borderTrap7)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkBorderTrap(this.borderTrap8)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkBorderTrap(this.borderTrap9)){
+            this.player.loseLive();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+
         if(this.player.checkCoin(this.coin)){
             this.player.getPoints();
             this.coin.update();
@@ -122,6 +233,8 @@ class Game{
        })
         this.enemies.forEach((enemy,index)=>{
             if(this.player.checkEnemy(enemy)){
+             //   this.player.invincibility=true;
+              //  setTimeout(this.player.invincibility=false,1000);
                 this.player.loseLive();
                 this.enemies.splice(index,1);
                 if(this.player.lives===0){
