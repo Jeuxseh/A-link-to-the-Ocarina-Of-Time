@@ -6,7 +6,7 @@ class Game{
         this.ctx=this.canvas.getContext('2d');
         this.player;
         this.coin;
-        this.attacks=[];
+        this.enemies=[];
         //tendria que crearle una propiedad de trampa???????????????????????????????????
         this.isGameOver=false;
     };
@@ -21,6 +21,11 @@ class Game{
         this.trampaSierra4= new Trampasierra(this.canvas,415,335);
 
         const loop =()=>{
+            if(Math.random()>0.995){
+                const x = Math.random()*this.canvas.width;
+                const y = Math.random()*this.canvas.height;
+                this.enemies.push( new Enemy (this.canvas,x,y))
+            }
 
             this.updateCanvas();
             this.clearCanvas();
@@ -42,8 +47,9 @@ class Game{
     }
 
     updateCanvas(){
-        this.attacks.forEach((attack,index)=>{
 
+        this.enemies.forEach((enemy)=>{
+            enemy.update(this.player.x,this.player.y);
         })
         this.player.update();
         this.trampaSierra1.update(115,185);
@@ -63,6 +69,9 @@ class Game{
         this.trampaSierra2.draw();
         this.trampaSierra3.draw();
         this.trampaSierra4.draw();
+        this.enemies.forEach((enemy)=>{
+            enemy.draw();
+        })
     }
     
     checkAllCollisions(){
@@ -104,6 +113,23 @@ class Game{
                 this.onWin();
             }
         }
+       this.player.attacking.forEach((attack,index)=>{
+           this.enemies.forEach((enemy,index)=>{
+                if(attack.checkAttacking(enemy)){
+                    this.enemies.splice(index,1);
+                }
+           }) 
+       })
+        this.enemies.forEach((enemy,index)=>{
+            if(this.player.checkEnemy(enemy)){
+                this.player.loseLive();
+                this.enemies.splice(index,1);
+                if(this.player.lives===0){
+                    this.isGameOver=true;
+                    this.onGameOver();
+                }
+            };
+        });
     }
 
     gameOverCallback(callback){
