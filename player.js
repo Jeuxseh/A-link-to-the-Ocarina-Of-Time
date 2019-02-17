@@ -17,13 +17,13 @@ class Player{
         this.invincibility=false;
     }
     loseLive(){
-        if(this.invincibility===false){
+        if(this.invincibility=false){
             this.lives--;
         }
     }
 
     getPoints(){
-        this.points++;
+        this.points+=10;
     }
 
     inmune(){
@@ -60,6 +60,18 @@ class Player{
             this.speedX=0;
             this.x-=7;
         }
+
+    }
+    checkEnd(end){
+        const collideRight= this.x + this.size/2 > end.x - end.size/2;
+            const collideLeft=this.x - this.size/2 < end.x + end.size/2;
+            const collideTop=this.y - this.size/2 < end.y + end.size/2;
+            const collideBottom=this.y + this.size/2 > end.y - end.size/2;
+        
+        if(collideRight&&collideLeft&&collideTop&&collideBottom){
+            return true;
+        }
+        return false;
 
     }
     checkTrap(trap){

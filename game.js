@@ -15,6 +15,8 @@ class Game{
 
         this.coin=new Coin(this.canvas);
 
+        this.end=new End(this.canvas);
+
         this.trampaSierra1= new Trampasierra(this.canvas,115,185);
         this.trampaSierra2= new Trampasierra(this.canvas,415,35);
         this.trampaSierra3= new Trampasierra(this.canvas,715,185);
@@ -96,6 +98,10 @@ class Game{
         this.trampaSierra3.draw();
         this.trampaSierra4.draw();
 
+        if(this.player.points>=50){       
+            this.end.draw();
+        }
+
         this.enemies.forEach((enemy)=>{
             enemy.draw();
         })
@@ -103,6 +109,12 @@ class Game{
     
     checkAllCollisions(){
         this.player.checkScreen();
+
+       if(this.player.points>=50 && this.player.checkEnd(this.end)){
+            this.isGameOver=true;
+                this.onWin();
+        }
+
         if(this.player.checkTrap(this.trampaSierra1)){
            
             this.player.loseLive();
@@ -112,8 +124,8 @@ class Game{
                 this.onGameOver();
             }
         }
-        if(this.player.checkTrap(this.trampaSierra2)){
-            
+        
+        if(this.player.checkTrap(this.trampaSierra2)){ 
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -225,15 +237,13 @@ class Game{
             this.player.getPoints();
             this.coin.update();
             this.coin.draw();
-            if(this.player.points>5){
-                this.isGameOver=true;
-                this.onWin();
-            }
+            
         }
        this.player.attacking.forEach((attack,index)=>{
            this.enemies.forEach((enemy,index)=>{
                 if(attack.checkAttacking(enemy)){
                     this.enemies.splice(index,1);
+                    this.player.points+=2;
                 }
            }) 
        })

@@ -31,6 +31,9 @@ const main = ()=>{
                 <li>¡Cuidado con las sierras!</li>
                 <li>¡Cuidado con los enemigos!</li>
                 <li>¡Cuidado con las llamas!</li>
+                <li>¡10 puntos por rupia!</li>
+                <li>¡2 puntos por eliminar a un enemigo!</li>
+                <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
             </ul>
         </div>
         <button id='start'>Main Menu</button>
