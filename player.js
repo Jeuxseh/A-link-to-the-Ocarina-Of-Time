@@ -16,8 +16,9 @@ class Player{
         this.attacking=[];
         this.invincibility=false;
     }
+
     loseLive(){
-        if(this.invincibility=false){
+        if(this.invincibility==false){
             this.lives--;
         }
     }
@@ -28,7 +29,9 @@ class Player{
 
     inmune(){
         this.invincibility=true;
-        setTimeout(this.invincibility=false,3000);
+        setTimeout(() => {
+            this.invincibility=false
+        },3000);
     }
 
     update(){
