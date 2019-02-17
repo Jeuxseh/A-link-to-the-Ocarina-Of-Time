@@ -20,4 +20,13 @@ html {
       width: 100%;
       height:90vh;
   }
+  #lives{
+    display:inline;
+  }
+  #score{
+    display:inline;
+  }
+  nav{
+    display:inline;
+  }
  

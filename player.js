@@ -14,19 +14,32 @@ class Player{
         this.lives=lives;
         this.orientation='N';
         this.attacking=[];
-     //   this.invincibility=false;
+        this.invincibility=false;
+    }
+    loseLive(){
+        if(this.invincibility===false){
+            this.lives--;
+        }
+    }
+
+    getPoints(){
+        this.points++;
+    }
+
+    inmune(){
+        this.invincibility=true;
+        setTimeout(this.invincibility=false,3000);
     }
 
     update(){
         this.y= this.y + this.speedY;
-        this.x=this.x + this.speedX;
-        
-        
+        this.x=this.x + this.speedX;  
     }
 
     draw(){
         this.ctx.fillStyle='green';
         this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size);
+       
         if (this.attacking[0]) {
             this.attacking[0].draw();
         }
@@ -76,12 +89,12 @@ class Player{
     }
 
     checkEnemy(enemy){
-     //   if(!this.invincibility){
+    
             const collideRight= this.x + this.size/2 > enemy.x - enemy.size/2;
             const collideLeft=this.x - this.size/2 < enemy.x + enemy.size/2;
             const collideTop=this.y - this.size/2 < enemy.y + enemy.size/2;
             const collideBottom=this.y + this.size/2 > enemy.y - enemy.size/2;
-  //      }
+        
         if(collideRight&&collideLeft&&collideTop&&collideBottom){
             return true;
         }
@@ -137,15 +150,6 @@ class Player{
         
     }
 
-    loseLive(){
-        this.lives--;
-    }
-
-    getPoints(){
-        this.points++;
-    }
-
-
-
+   
 
 };

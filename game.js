@@ -4,7 +4,7 @@ class Game{
     constructor(canvas){
         this.canvas=canvas;
         this.ctx=this.canvas.getContext('2d');
-        this.player;
+        this.player=new Player(this.canvas,6);
         this.coin;
         this.enemies=[];
         //tendria que crearle una propiedad de trampa???????????????????????????????????
@@ -12,8 +12,6 @@ class Game{
     };
 
     startLoop(){
-
-        this.player=new Player(this.canvas,6);
 
         this.coin=new Coin(this.canvas);
 
@@ -45,6 +43,7 @@ class Game{
             this.clearCanvas();
             this.checkAllCollisions();
             this.drawCanvas();
+            
 
             if(!this.isGameOver){
                 window.requestAnimationFrame(loop);
@@ -104,111 +103,118 @@ class Game{
     
     checkAllCollisions(){
         this.player.checkScreen();
-    //    if (this.player.invincibility === false ){
-    //        console.log("antes" + this.player.invincibility);
-            if(this.player.checkTrap(this.trampaSierra1)){
-     //       this.player.invincibility=true;
-      //      console.log("despues" + this.player.invincibility);
-      //      setTimeout(this.player.invincibility=false,8000);
-                this.player.loseLive();
-                if(this.player.lives===0){
-                    this.isGameOver=true;
-                    this.onGameOver();
-                }
-            }
-     //   }
-     //   if (!this.player.invincibility){
-            if(this.player.checkTrap(this.trampaSierra2)){
-         //       this.player.invincibility=true;
-       //         setTimeout(this.player.invincibility=false,8000);
-                this.player.loseLive();
-                if(this.player.lives===0){
-                    this.isGameOver=true;
-                    this.onGameOver();
-                }
-            }
-  //       }
-     //   if (!this.player.invincibility){
-            if(this.player.checkTrap(this.trampaSierra3)){   
-        //        this.player.invincibility=true;
-         //       setTimeout(this.player.invincibility=false,8000);
-                this.player.loseLive();
-                if(this.player.lives===0){
-                    this.isGameOver=true;
-                    this.onGameOver();
-                }
-            }
-     //   }
-     //   if (!this.player.invincibility){
-            if(this.player.checkTrap(this.trampaSierra4)){
-        //        this.player.invincibility=true;
-        //        setTimeout(this.player.invincibility=false,8000);
-                this.player.loseLive();
-                if(this.player.lives===0){
-                    this.isGameOver=true;
-                    this.onGameOver();
-                }
-            }
-     //   }
-
-        if(this.player.checkBorderTrap(this.borderTrap1)){
+        if(this.player.checkTrap(this.trampaSierra1)){
+           
             this.player.loseLive();
+            this.player.inmune();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkTrap(this.trampaSierra2)){
+            
+            this.player.loseLive();
+            this.player.inmune();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkTrap(this.trampaSierra3)){   
+          
+            this.player.loseLive();
+            this.player.inmune();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkTrap(this.trampaSierra4)){
+            
+            this.player.loseLive();
+            this.player.inmune();
+            if(this.player.lives===0){
+                this.isGameOver=true;
+                this.onGameOver();
+            }
+        }
+        if(this.player.checkBorderTrap(this.borderTrap1)){
+           
+            this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap2)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap3)){
+           
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap4)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap5)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap6)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap7)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap8)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap9)){
+            
             this.player.loseLive();
+            this.player.inmune();
             if(this.player.lives===0){
                 this.isGameOver=true;
                 this.onGameOver();
@@ -233,9 +239,9 @@ class Game{
        })
         this.enemies.forEach((enemy,index)=>{
             if(this.player.checkEnemy(enemy)){
-             //   this.player.invincibility=true;
-              //  setTimeout(this.player.invincibility=false,1000);
+               
                 this.player.loseLive();
+                this.player.inmune();
                 this.enemies.splice(index,1);
                 if(this.player.lives===0){
                     this.isGameOver=true;
@@ -243,6 +249,8 @@ class Game{
                 }
             };
         });
+        document.getElementById('lives').innerText=this.player.lives;
+        document.getElementById('score').innerText=this.player.points;
     }
 
     gameOverCallback(callback){

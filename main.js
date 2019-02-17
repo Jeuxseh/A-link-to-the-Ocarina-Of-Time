@@ -11,27 +11,53 @@ const main = ()=>{
         const splashScreen=buildDom(`
             <section class="splash-screen">
                 <h1>A link to the Ocarina Of Seasons</h1>
-                <button>Start</button>
+                <button id="start">Start</button>
+                <button id="instructions">Instructions</button>
             </section>
         `)
-        const startButton=document.querySelector('button');
-        startButton.addEventListener('click',buildGameScreen)
-        
+        const startButton=document.getElementById('start');
+        startButton.addEventListener('click',buildGameScreen);
+        const instructionsButton=document.getElementById('instructions');
+        instructionsButton.addEventListener('click',buildInstructionScreen);       
     }
+    const buildInstructionScreen=()=>{
+        const instructionsScreen=buildDom(`
+        <h1>Instrucciones</h1>
+        <div>
+            <ul>
+                <li>Flechas para moverte; arriba,abajo,izquierda,derecha.</li>
+                <li>Barra espaciadora para atacar.</li>
+                <li>¡Consigue rupias!</li>
+                <li>¡Cuidado con las sierras!</li>
+                <li>¡Cuidado con los enemigos!</li>
+                <li>¡Cuidado con las llamas!</li>
+            </ul>
+        </div>
+        <button id='start'>Main Menu</button>
+        `)
+        const startButton=document.getElementById('start');
+        startButton.addEventListener('click',buildSplashScreen);
+    }
+
     const buildGameScreen=()=>{
         const gameScreen =buildDom(`
-            <nav class="game-nav">
-                <div class="lives">
-                    Lives
+              
+                <div>
+                    Lives:
+                    <div id="lives">
+                        Lives:   
+                    </div>
                 </div>
-                <div class="score">
-                    score
+                <div>
+                    Score:
+                    <div id="score">   
+                    </div>
                 </div>
-            </nav>
             <section class="game-screen">
                 <canvas></canvas>
             </section>
         `)
+        
         const width=document.querySelector('.game-screen').offsetWidth;
         const height=document.querySelector('.game-screen').offsetHeight;
 
@@ -41,6 +67,8 @@ const main = ()=>{
         canvasElement.setAttribute('height',height);
 
         const game = new Game(canvasElement);
+
+       
 
         game.gameOverCallback(buildGameOver);
         game.winCallback(buildWin);
@@ -88,6 +116,8 @@ const main = ()=>{
 
     }
 
+    
+
     const buildGameOver=()=>{
         const gameOverScreen=buildDom(`
             <section class="game-over">
@@ -106,6 +136,7 @@ const main = ()=>{
         const winScreen=buildDom(`
             <section class="win">
                 <h1>Win Screen</h1>
+                <h3></h3>
                 <button id="restart">Restart</button>
                 <button id="main-menu">Main Menu</button>
             </section>
