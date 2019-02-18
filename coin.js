@@ -6,7 +6,8 @@ class Coin{
         this.ctx=this.canvas.getContext('2d');
         this.x=this.canvas.width/2;
         this.y=this.canvas.height/2;
-        this.size=25;
+        this.size=30;
+        this.image=rupia;
         
     }
     ;
@@ -18,8 +19,9 @@ class Coin{
     };
 
     draw(){
-        this.ctx.fillStyle='blue';
-        this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size,this.size)
+        this.ctx.fillStyle='#ffffff00';
+        this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size,this.size);
+        this.ctx.drawImage(this.image,this.x-this.size/2,this.y-this.size/2);
 
     }
 }

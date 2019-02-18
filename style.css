@@ -19,7 +19,7 @@ html {
       border:2px solid black;
       width: 100%;
       height:90vh;
-      background-image: url("");
+      background-image: url("sprites-link-buenos/suelo2.png");
   }
   #lives{
     display:inline;
