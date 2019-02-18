@@ -115,8 +115,7 @@ class Game{
                 this.onWin();
         }
 
-        if(this.player.checkTrap(this.trampaSierra1)){
-           
+        if(this.player.checkTrap(this.trampaSierra1)){    
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -134,7 +133,6 @@ class Game{
             }
         }
         if(this.player.checkTrap(this.trampaSierra3)){   
-          
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -143,7 +141,6 @@ class Game{
             }
         }
         if(this.player.checkTrap(this.trampaSierra4)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -152,7 +149,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap1)){
-           
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -161,7 +157,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap2)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -170,7 +165,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap3)){
-           
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -179,7 +173,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap4)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -188,7 +181,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap5)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -197,7 +189,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap6)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -206,7 +197,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap7)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -215,7 +205,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap8)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -224,7 +213,6 @@ class Game{
             }
         }
         if(this.player.checkBorderTrap(this.borderTrap9)){
-            
             this.player.loseLive();
             this.player.inmune();
             if(this.player.lives===0){
@@ -249,9 +237,8 @@ class Game{
        })
         this.enemies.forEach((enemy,index)=>{
             if(this.player.checkEnemy(enemy)){
-               
-                this.player.loseLive();
                 this.player.inmune();
+                this.player.loseLive();
                 this.enemies.splice(index,1);
                 if(this.player.lives===0){
                     this.isGameOver=true;
@@ -259,6 +246,7 @@ class Game{
                 }
             };
         });
+        
         document.getElementById('lives').innerText=this.player.lives;
         document.getElementById('score').innerText=this.player.points;
     }

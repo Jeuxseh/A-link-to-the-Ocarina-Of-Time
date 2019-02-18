@@ -18,7 +18,7 @@ class Player{
     }
 
     loseLive(){
-        if(this.invincibility==false){
+        if(this.invincibility===false){
             this.lives--;
         }
     }
@@ -28,10 +28,12 @@ class Player{
     }
 
     inmune(){
-        this.invincibility=true;
+        if (!this.invincibility){
+            this.invincibility=true
         setTimeout(() => {
             this.invincibility=false
-        },3000);
+           },2000);
+        }
     }
 
     update(){
@@ -40,7 +42,11 @@ class Player{
     }
 
     draw(){
-        this.ctx.fillStyle='green';
+        if(this.invincibility==false){
+            this.ctx.fillStyle='green';
+        }else{
+            this.ctx.fillStyle='pink';
+        }
         this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size);
        
         if (this.attacking[0]) {

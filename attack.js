@@ -22,13 +22,13 @@ class Attack {
     update(x,y){
         this.y = y;
         this.x = x;
-        this.ctx.fillStyle='black';
-        this.ctx.fillRect(x-this.size/2,y-this.size/2,this.size,this.size)
+        this.draw();
     }
 
     draw() {
         this.ctx.fillStyle='black';
         this.ctx.fillRect(this.x-this.size/2,this.y-this.size/2,this.size,this.size)
+
     }
     
 }
