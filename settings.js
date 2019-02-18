@@ -21,3 +21,5 @@ let enemigoArriba = new Image();enemigoArriba.src = "sprites-link-buenos/enemigo
 let enemigoAbajo = new Image();enemigoAbajo.src = "sprites-link-buenos/enemigo-abajo.png"; 
 
 let rupia = new Image(); rupia.src="sprites-link-buenos/rupias.png"
+
+let triforce = new Image(); triforce.src="sprites-link-buenos/triforce.png"

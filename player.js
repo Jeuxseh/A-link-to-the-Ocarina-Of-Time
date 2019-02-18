@@ -53,7 +53,7 @@ class Player{
     }
 
     draw(){
-        if(!this.invincibility){
+        
         switch(this.orientation){
             case 'N':
                 this.ctx.fillStyle = "green"; 
@@ -108,16 +108,15 @@ class Player{
                 }
             break;
         }
-     }else{
-        this.ctx.fillStyle="pink";
-        }
+     
+    
         /*
         if(this.invincibility==false){
             this.ctx.fillStyle='green';
         }else{
             this.ctx.fillStyle='pink';
         }
-        this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size);
+        
        */
         if (this.attacking[0]) {
             this.attacking[0].draw();

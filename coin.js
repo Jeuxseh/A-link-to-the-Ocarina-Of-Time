@@ -6,7 +6,7 @@ class Coin{
         this.ctx=this.canvas.getContext('2d');
         this.x=this.canvas.width/2;
         this.y=this.canvas.height/2;
-        this.size=30;
+        this.size=50;
         this.image=rupia;
         
     }

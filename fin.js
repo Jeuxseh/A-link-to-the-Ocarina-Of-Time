@@ -8,10 +8,11 @@ class End{
        
         this.ctx=this.canvas.getContext('2d');
         this.size=16;
+        this.image=triforce;
     }
 
     draw(){
-        this.ctx.fillStyle='purple';
-        this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size,this.size)
+        this.ctx.drawImage(this.image,this.x - this.size/2,this.y - this.size*2,this.size*3,this.size*3);
+        this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size,this.size);
     }
 }
