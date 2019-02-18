@@ -56,7 +56,7 @@ class Player{
         
         switch(this.orientation){
             case 'N':
-                this.ctx.fillStyle = "green"; 
+                this.ctx.fillStyle = "#ffffff00"; 
                 this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.linkUp, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size+5,this.size);
                 this.xpos = this.xpos + this.velocidad; 
@@ -69,7 +69,7 @@ class Player{
                 }
             break;
             case 'E':
-                this.ctx.fillStyle = "green"; 
+                this.ctx.fillStyle = "#ffffff00"; 
                 this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.linkRight, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 
@@ -82,7 +82,7 @@ class Player{
                 }
             break;
             case 'S':
-                this.ctx.fillStyle = "green"; 
+                this.ctx.fillStyle = "#ffffff00"; 
                 this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.linkDown, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 
@@ -95,7 +95,7 @@ class Player{
                 }
             break;
             case 'W':
-                this.ctx.fillStyle = "green"; 
+                this.ctx.fillStyle = "#ffffff00"; 
                 this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.linkLeft, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 

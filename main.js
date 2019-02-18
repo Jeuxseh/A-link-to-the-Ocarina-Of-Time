@@ -10,12 +10,17 @@ const main = ()=>{
 
         const splashScreen=buildDom(`
             <section class="splash-screen">
-                <h1>A link to the Ocarina Of Seasons</h1>
-                <button id="start">Start</button>
+            <div>
+                <h1 class="tittle-game">A link to the Ocarina Of Seasons</h1>
+            </div>
+            <article>
+                <h2 class="tittle">Historia</h2>
+            </aticle>
+                <button id="start-button">Start</button>
                 <button id="instructions">Instructions</button>
             </section>
         `)
-        const startButton=document.getElementById('start');
+        const startButton=document.getElementById('start-button');
         startButton.addEventListener('click',buildGameScreen);
         const instructionsButton=document.getElementById('instructions');
         instructionsButton.addEventListener('click',buildInstructionScreen);       
