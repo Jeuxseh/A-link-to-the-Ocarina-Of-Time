@@ -4,7 +4,7 @@
 class Player{
     constructor(canvas,lives){
         this.points=0;
-        this.size=40;
+        this.size=50;
         this.canvas=canvas;
         this.ctx= this.canvas.getContext('2d');
         this.x= this.canvas.width/2;
@@ -15,6 +15,17 @@ class Player{
         this.orientation='N';
         this.attacking=[];
         this.invincibility=false;
+
+        this.cuadro_del_sprite = 0;
+        this.cuadros_por_segundo = 0;
+        this.xpos = 0;
+        this.velocidad = 0.16; 
+        this.linkUp= linkArriba;
+        this.linkDown= linkAbajo;
+        this.linkLeft= linkIzquierda;
+        this.linkRight= linkDerecha;
+
+
     }
 
     loseLive(){
@@ -42,13 +53,69 @@ class Player{
     }
 
     draw(){
+        switch(this.orientation){
+            case 'N':
+                this.ctx.fillStyle = "green"; 
+                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
+                this.ctx.drawImage(this.linkUp, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
+                this.xpos = this.xpos + this.velocidad; 
+                this.cuadros_por_segundo++;
+                if(this.cuadros_por_segundo%3==0){
+                    this.cuadro_del_sprite++;
+                    if (this.cuadro_del_sprite >7) {
+                        this.cuadro_del_sprite = 0;
+                    }
+                }
+            break;
+            case 'E':
+                this.ctx.fillStyle = "green"; 
+                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
+                this.ctx.drawImage(this.linkRight, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
+                this.xpos = this.xpos + this.velocidad; 
+                this.cuadros_por_segundo++;
+                if(this.cuadros_por_segundo%3==0){
+                    this.cuadro_del_sprite++;
+                    if (this.cuadro_del_sprite >5) {
+                        this.cuadro_del_sprite = 0;
+                    }
+                }
+            break;
+            case 'S':
+                this.ctx.fillStyle = "green"; 
+                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
+                this.ctx.drawImage(this.linkDown, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
+                this.xpos = this.xpos + this.velocidad; 
+                this.cuadros_por_segundo++;
+                if(this.cuadros_por_segundo%3==0){
+                    this.cuadro_del_sprite++;
+                    if (this.cuadro_del_sprite >7) {
+                        this.cuadro_del_sprite = 0;
+                    }
+                }
+            break;
+            case 'W':
+                this.ctx.fillStyle = "green"; 
+                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
+                this.ctx.drawImage(this.linkLeft, 30*this.cuadro_del_sprite, 0,30,23,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
+                this.xpos = this.xpos + this.velocidad; 
+                this.cuadros_por_segundo++;
+                if(this.cuadros_por_segundo%3==0){
+                    this.cuadro_del_sprite++;
+                    if (this.cuadro_del_sprite >5) {
+                        this.cuadro_del_sprite = 0;
+                    }
+                }
+            break;
+        }
+
+        /*
         if(this.invincibility==false){
             this.ctx.fillStyle='green';
         }else{
             this.ctx.fillStyle='pink';
         }
         this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size);
-       
+       */
         if (this.attacking[0]) {
             this.attacking[0].draw();
         }

@@ -4,10 +4,9 @@ class Game{
     constructor(canvas){
         this.canvas=canvas;
         this.ctx=this.canvas.getContext('2d');
-        this.player=new Player(this.canvas,6);
+        this.player=new Player(this.canvas,3);
         this.coin;
         this.enemies=[];
-        //tendria que crearle una propiedad de trampa???????????????????????????????????
         this.isGameOver=false;
     };
 
@@ -78,8 +77,7 @@ class Game{
     };
 
     drawCanvas(){
-        this.player.draw();
-        this.coin.draw();
+        
 
         this.borderTrap1.draw();
         this.borderTrap2.draw();
@@ -97,6 +95,9 @@ class Game{
         this.trampaSierra2.draw();
         this.trampaSierra3.draw();
         this.trampaSierra4.draw();
+        
+        this.player.draw();
+        this.coin.draw();
 
         if(this.player.points>=50){       
             this.end.draw();
@@ -237,8 +238,8 @@ class Game{
        })
         this.enemies.forEach((enemy,index)=>{
             if(this.player.checkEnemy(enemy)){
-                this.player.inmune();
                 this.player.loseLive();
+                this.player.inmune();
                 this.enemies.splice(index,1);
                 if(this.player.lives===0){
                     this.isGameOver=true;

@@ -8,6 +8,8 @@ class Trampasierra{
         this.x=x ;
         this.y=y;
         this.speed=10;
+
+        this.image=sierra;
     }
 
 
@@ -30,8 +32,9 @@ class Trampasierra{
           }
         
     draw(){
-        this.ctx.fillStyle='red';
+        this.ctx.fillStyle='#ffffff00';
         this.ctx.fillRect(this.x - this.size/2,this.y-this.size/2,this.size,this.size);
+        this.ctx.drawImage(this.image, this.x - this.size/2,this.y-this.size/2,this.size,this.size);
 
     };
 };
