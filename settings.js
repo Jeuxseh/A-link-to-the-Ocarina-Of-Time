@@ -24,10 +24,18 @@ let rupia = new Image(); rupia.src="sprites-link-buenos/rupias.png"
 
 let triforce = new Image(); triforce.src="sprites-link-buenos/triforce.png"
 
-let espadaArriba = new Image(); espadaArriba.src="sprite-link-buenos/espada-arriba.png"
+let espadaArriba = new Image(); espadaArriba.src="sprites-link-buenos/espada-arriba.png"
 
-let espadaAbajo = new Image(); espadaAbajo.src="sprite-link-buenos/espada-abajo.png"
+let espadaAbajo = new Image(); espadaAbajo.src="sprites-link-buenos/espada-abajo.png"
 
-let espadaIzquierda = new Image(); espadaIzquierda.src="sprite-link-buenos/espada-izquierda.jpeg"
+let espadaIzquierda = new Image(); espadaIzquierda.src="sprites-link-buenos/espada-izquierda.jpeg"
 
-let espadaDerecha = new Image(); espadaDerecha.src="sprite-link-buenos/espada-derecha.jpeg"
+let espadaDerecha = new Image(); espadaDerecha.src="sprites-link-buenos/espada-derecha.jpeg"
+
+let colisionArriba = new Image(); colisionArriba.src="sprites-link-buenos/link-oracle-arriba.png";
+
+let colisionAbajo = new Image(); colisionAbajo.src="sprites-link-buenos/link-oracle-abajo.png";
+
+let colisionDerecha = new Image(); colisionDerecha.src="sprites-link-buenos/link-oracle-derecha.png";
+
+let colisionIzquierda = new Image(); colisionIzquierda.src="sprites-link-buenos/link-oracle-izquierda.png";

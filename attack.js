@@ -8,7 +8,7 @@ class Attack {
 
         this.espadaUp = espadaArriba;
         this.espadaDown = espadaAbajo;
-        this.espadaLeft = espadaIzquierda
+        this.espadaLeft = espadaIzquierda;
         this.espadaRight = espadaDerecha;
 
         this.orientacion;
@@ -35,36 +35,28 @@ class Attack {
     }
 
     draw(orientation) {
-    /*
-
-        console.log(`OLAKEASE ${orientation}`)
         switch (orientation) {
             case 'N':
-                this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
+               // this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
                 this.ctx.drawImage(this.espadaUp, this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
                 break;
             case 'S':
-                this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
+               // this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
                 this.ctx.drawImage(this.espadaDown, this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
                 break;
             case 'W':
-                this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
+               // this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
                 this.ctx.drawImage(this.espadaLeft, this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
                 break;
             case 'E':
-                this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
+               // this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
                 this.ctx.drawImage(this.espadaRight, this.x - this.size / 2, this.y - this.size / 2, this.size, this.size);
                 break;
-            default:
-                this.ctx.fillStyle = 'black';
-                this.ctx.fillRect(this.x - this.size / 2, this.y - this.size / 2, this.size, this.size)
-                break;
+            
 
         }
-    */
-         this.ctx.fillStyle='black';
-            
-        this.ctx.fillRect(this.x-this.size/2,this.y-this.size/2,this.size,this.size)
+    
+     
 
     }
 

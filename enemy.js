@@ -46,8 +46,7 @@ class Enemy{
     draw(){
         switch(this.orientation){
             case 'N':
-                this.ctx.fillStyle = "#ffffff00"; 
-                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
+                this.ctx.fillStyle = "#ffffff00";  
                 this.ctx.drawImage(this.enemigoUp, 20*this.cuadro_del_sprite, 0,20,20,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 
                 this.cuadros_por_segundo++;
@@ -60,7 +59,6 @@ class Enemy{
             break;
             case 'E':
                 this.ctx.fillStyle = "#ffffff00"; 
-                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.enemigoRight, 20*this.cuadro_del_sprite, 0,20,20,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 
                 this.cuadros_por_segundo++;
@@ -73,7 +71,6 @@ class Enemy{
             break;
             case 'S':
                 this.ctx.fillStyle = "#ffffff00"; 
-                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.enemigoDown, 20*this.cuadro_del_sprite, 0,20,20,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 
                 this.cuadros_por_segundo++;
@@ -86,7 +83,6 @@ class Enemy{
             break;
             case 'W':
                 this.ctx.fillStyle = "#ffffff00"; 
-                this.ctx.fillRect(this.x - this.size/2,this.y - this.size/2,this.size,this.size); 
                 this.ctx.drawImage(this.enemigoLeft, 20*this.cuadro_del_sprite, 0,20,20,this.x-this.size/2,this.y-this.size/2,this.size,this.size);
                 this.xpos = this.xpos + this.velocidad; 
                 this.cuadros_por_segundo++;
