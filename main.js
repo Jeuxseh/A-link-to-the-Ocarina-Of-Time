@@ -33,34 +33,37 @@ const main = ()=>{
     }
     const buildInstructionScreen=()=>{
         const instructionsScreen=buildDom(`
-        <section>
-            <h1>Instrucciones</h1>
-            <div>
-                <ul>
-                    <li>Flechas para moverte; arriba,abajo,izquierda,derecha.</li>
-                    <li>Barra espaciadora para atacar.</li>
-                    <li>¡Consigue rupias!</li>
-                    <li>¡Cuidado con las sierras!</li>
-                    <li>¡Cuidado con los enemigos!</li>
-                    <li>¡Cuidado con las llamas!</li>
-                    <li>¡10 puntos por rupia!</li>
-                    <li>¡2 puntos por eliminar a un enemigo!</li>
-                    <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
-                </ul>
-                <div>
-                    <img src="" alt="">
+        <section class="back-ground">
+             <div  id="instrucciones">
+                <div class="instrucciones">
+                    <h1 >Instrucciones</h1>
                 </div>
-                <div>
-                    <img src="" alt="">
+                <div class="ul">
+                    <ul >
+                        <li>Flechas para moverte; arriba,abajo,izquierda,derecha.</li>
+                        <li>Barra espaciadora para atacar.</li>
+                        <li>¡Consigue rupias!</li>
+                        <li>¡Cuidado con las sierras!</li>
+                        <li>¡Cuidado con los enemigos!</li>
+                        <li>¡Cuidado con las llamas!</li>
+                        <li>¡10 puntos por rupia!</li>
+                        <li>¡2 puntos por eliminar a un enemigo!</li>
+                        <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
+                    </ul>
                 </div>
+                    <div class="imagenes" >
+                        <img class="image" src="sprites-link-buenos/arrows.png" alt="controles"/>
+                        <img class="image" src="sprites-link-buenos/spacebar.png" alt="space-bar"/>
+                    </div>
+                <button id="back-menu">Main Menu</button>
+                <audio controls autoplay loop>
+                    <source src="sprites-link-buenos/instructions.mp3">
+                </audio>
             </div>
-            <button id='start'>Main Menu</button>
-            <audio controls autoplay loop>
-                <source src="sprites-link-buenos/instructions.mp3">
-            </audio>
+            </div>
         </section>
         `)
-        const startButton=document.getElementById('start');
+        const startButton=document.getElementById('back-menu');
         startButton.addEventListener('click',buildSplashScreen);
     }
 
