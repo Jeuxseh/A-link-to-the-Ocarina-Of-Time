@@ -23,3 +23,11 @@ let enemigoAbajo = new Image();enemigoAbajo.src = "sprites-link-buenos/enemigo-a
 let rupia = new Image(); rupia.src="sprites-link-buenos/rupias.png"
 
 let triforce = new Image(); triforce.src="sprites-link-buenos/triforce.png"
+
+let espadaArriba = new Image(); espadaArriba.src="sprite-link-buenos/espada-arriba.png"
+
+let espadaAbajo = new Image(); espadaAbajo.src="sprite-link-buenos/espada-abajo.png"
+
+let espadaIzquierda = new Image(); espadaIzquierda.src="sprite-link-buenos/espada-izquierda.jpeg"
+
+let espadaDerecha = new Image(); espadaDerecha.src="sprite-link-buenos/espada-derecha.jpeg"

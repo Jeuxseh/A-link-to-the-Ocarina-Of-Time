@@ -9,16 +9,19 @@ const main = ()=>{
     const buildSplashScreen=()=>{
 
         const splashScreen=buildDom(`
+            
             <section class="splash-screen">
-            <div>
-                <h1 class="tittle-game">A link to the Ocarina Of Seasons</h1>
+            <div class="tittle-game">
+                <h1 >A link to the Ocarina Of Seasons</h1>
             </div>
-            <article>
-                <h2 class="tittle">Historia</h2>
-            </aticle>
+            <div class="tittle">
+                <h2 >Historia</h2>
+                <p>Nos adentramos en el universo de Zelda para redimir a Link de no haber aprendido a programar nunca.<br> En esta aventura conseguiremos la trifuerza del cleanCode para adentrarnos en el dificil sector de la programacion. </p>
+            </div>
                 <button id="start-button">Start</button>
                 <button id="instructions">Instructions</button>
             </section>
+            
         `)
         const startButton=document.getElementById('start-button');
         startButton.addEventListener('click',buildGameScreen);
@@ -40,6 +43,12 @@ const main = ()=>{
                 <li>¡2 puntos por eliminar a un enemigo!</li>
                 <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
             </ul>
+            <div>
+                <img src="" alt="">
+            </div>
+            <div>
+                <img src="" alt="">
+            </div>
         </div>
         <button id='start'>Main Menu</button>
         `)

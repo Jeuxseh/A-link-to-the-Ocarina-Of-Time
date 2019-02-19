@@ -7,7 +7,7 @@ class Trampasierra{
         this.ctx=this.canvas.getContext('2d');
         this.x=x ;
         this.y=y;
-        this.speed=5   ;
+        this.speed=5;
 
         this.image=sierra;
     }

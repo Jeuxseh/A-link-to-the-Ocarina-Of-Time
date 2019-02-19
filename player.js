@@ -198,25 +198,25 @@ class Player{
     
         switch(this.orientation){
             case 'N':
-                attack.update(this.x,this.y-this.size);
+                attack.update(this.x,this.y-this.size,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
                 },50);
             break;
             case 'E':
-                attack.update(this.x+this.size,this.y);
+                attack.update(this.x+this.size,this.y,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
                 },50);
             break;
             case 'S':
-                attack.update(this.x,this.y+this.size);
+                attack.update(this.x,this.y+this.size,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
                 },50);
             break;
             case 'W':
-                attack.update(this.x-this.size,this.y);
+                attack.update(this.x-this.size,this.y,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
                 },50);
