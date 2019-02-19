@@ -28,9 +28,9 @@ let espadaArriba = new Image(); espadaArriba.src="sprites-link-buenos/espada-arr
 
 let espadaAbajo = new Image(); espadaAbajo.src="sprites-link-buenos/espada-abajo.png"
 
-let espadaIzquierda = new Image(); espadaIzquierda.src="sprites-link-buenos/espada-izquierda.jpeg"
+let espadaIzquierda = new Image(); espadaIzquierda.src="sprites-link-buenos/espada-izquierda.png"
 
-let espadaDerecha = new Image(); espadaDerecha.src="sprites-link-buenos/espada-derecha.jpeg"
+let espadaDerecha = new Image(); espadaDerecha.src="sprites-link-buenos/espada-derecha.png"
 
 let colisionArriba = new Image(); colisionArriba.src="sprites-link-buenos/link-oracle-arriba.png";
 

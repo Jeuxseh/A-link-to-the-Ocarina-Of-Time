@@ -49,7 +49,7 @@ class Player{
             this.invincibility=true
         setTimeout(() => {
             this.invincibility=false
-           },2000);
+           },1500);
         }
     }
 
@@ -257,25 +257,25 @@ class Player{
                 attack.update(this.x,this.y-this.size,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },50);
+                },100);
             break;
             case 'E':
                 attack.update(this.x+this.size,this.y,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },50);
+                },100);
             break;
             case 'S':
                 attack.update(this.x,this.y+this.size,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },50);
+                },100);
             break;
             case 'W':
                 attack.update(this.x-this.size,this.y,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },50);
+                },100);
             break;
         }
         
