@@ -20,6 +20,9 @@ const main = ()=>{
             </div>
                 <button id="start-button">Start</button>
                 <button id="instructions">Instructions</button>
+                <audio controls autoplay loop>
+                  <source src="sprites-link-buenos/intro.mp3">
+                </audio>
             </section>
             
         `)
@@ -30,27 +33,32 @@ const main = ()=>{
     }
     const buildInstructionScreen=()=>{
         const instructionsScreen=buildDom(`
-        <h1>Instrucciones</h1>
-        <div>
-            <ul>
-                <li>Flechas para moverte; arriba,abajo,izquierda,derecha.</li>
-                <li>Barra espaciadora para atacar.</li>
-                <li>¡Consigue rupias!</li>
-                <li>¡Cuidado con las sierras!</li>
-                <li>¡Cuidado con los enemigos!</li>
-                <li>¡Cuidado con las llamas!</li>
-                <li>¡10 puntos por rupia!</li>
-                <li>¡2 puntos por eliminar a un enemigo!</li>
-                <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
-            </ul>
+        <section>
+            <h1>Instrucciones</h1>
             <div>
-                <img src="" alt="">
+                <ul>
+                    <li>Flechas para moverte; arriba,abajo,izquierda,derecha.</li>
+                    <li>Barra espaciadora para atacar.</li>
+                    <li>¡Consigue rupias!</li>
+                    <li>¡Cuidado con las sierras!</li>
+                    <li>¡Cuidado con los enemigos!</li>
+                    <li>¡Cuidado con las llamas!</li>
+                    <li>¡10 puntos por rupia!</li>
+                    <li>¡2 puntos por eliminar a un enemigo!</li>
+                    <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
+                </ul>
+                <div>
+                    <img src="" alt="">
+                </div>
+                <div>
+                    <img src="" alt="">
+                </div>
             </div>
-            <div>
-                <img src="" alt="">
-            </div>
-        </div>
-        <button id='start'>Main Menu</button>
+            <button id='start'>Main Menu</button>
+            <audio controls autoplay loop>
+                <source src="sprites-link-buenos/instructions.mp3">
+            </audio>
+        </section>
         `)
         const startButton=document.getElementById('start');
         startButton.addEventListener('click',buildSplashScreen);
@@ -72,6 +80,9 @@ const main = ()=>{
                 </div>
             <section class="game-screen">
                 <canvas></canvas>
+                <audio controls autoplay loop>
+                  <source src="sprites-link-buenos/game.mp3">
+                </audio>
             </section>
         `)
         
@@ -141,6 +152,9 @@ const main = ()=>{
                 <h1>Game Over Screen</h1>
                 <button id="restart">Retry</button>
                 <button id = "main-menu">Main Menu</button>
+                <audio controls autoplay loop>
+                  <source src="sprites-link-buenos/gameOver.mp3">
+                </audio>
             </section>
         `);
         const mainButton = document.getElementById('main-menu');
@@ -156,6 +170,9 @@ const main = ()=>{
                 <h3></h3>
                 <button id="restart">Restart</button>
                 <button id="main-menu">Main Menu</button>
+                <audio controls autoplay loop>
+                  <source src="sprites-link-buenos/onWin.mp3">
+                </audio>
             </section>
         `);
         
