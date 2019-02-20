@@ -12,6 +12,8 @@ class Attack {
         this.espadaRight = espadaDerecha;
 
         this.orientacion;
+
+     
     }
 
     checkAttacking(enemy) {

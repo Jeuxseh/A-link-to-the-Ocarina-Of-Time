@@ -15,8 +15,7 @@ const main = ()=>{
                 <h1 >A link to the Ocarina Of Seasons</h1>
             </div>
             <div class="tittle">
-                <h2 >Historia</h2>
-                <p>Nos adentramos en el universo de Zelda para redimir a Link de no haber aprendido a programar nunca.<br> En esta aventura conseguiremos la trifuerza del cleanCode para adentrarnos en el dificil sector de la programacion. </p>
+                <p>Nos adentramos en el universo de Zelda para redimir a Link de no haber aprendido a programar nunca.<br> En esta aventura conseguiremos la trifuerza del cleanCode para aventurarnos en el difícil sector de la programacion. </p>
             </div>
                 <button id="start-button">Start</button>
                 <button id="instructions">Instructions</button>
@@ -40,14 +39,11 @@ const main = ()=>{
                 </div>
                 <div class="ul">
                     <ul >
-                        <li>Flechas para moverte; arriba,abajo,izquierda,derecha.</li>
+                        <li>Flechas para moverte.</li>
                         <li>Barra espaciadora para atacar.</li>
-                        <li>¡Consigue rupias!</li>
-                        <li>¡Cuidado con las sierras!</li>
+                        <li>¡Consigue puntos: 10 por rupia y 2 por enemigo!</li>
+                        <li>¡Cuidado con las trampas!</li>
                         <li>¡Cuidado con los enemigos!</li>
-                        <li>¡Cuidado con las llamas!</li>
-                        <li>¡10 puntos por rupia!</li>
-                        <li>¡2 puntos por eliminar a un enemigo!</li>
                         <li>Cuando tengas 50 puntos podras acabar la partida pero siempre habrá enemigos que matar y rupias que recoger</li>
                     </ul>
                 </div>
@@ -109,6 +105,7 @@ const main = ()=>{
            
             if(event.code==="Space"){
                 game.player.playerAttack();
+               
             }
 
         }
@@ -152,8 +149,8 @@ const main = ()=>{
     const buildGameOver=()=>{
         const gameOverScreen=buildDom(`
             <section class="game-over">
-                <h1>Game Over Screen</h1>
-                <button id="restart">Retry</button>
+                <h1 class="over">Game Over Screen</h1>
+                <button id="retry">Retry</button>
                 <button id = "main-menu">Main Menu</button>
                 <audio controls autoplay loop>
                   <source src="sprites-link-buenos/gameOver.mp3">
@@ -161,28 +158,29 @@ const main = ()=>{
             </section>
         `);
         const mainButton = document.getElementById('main-menu');
-        const restartButton = document.getElementById('restart');
+        const restartButton = document.getElementById('retry');
         mainButton.addEventListener('click',buildSplashScreen);
         restartButton.addEventListener('click',buildGameScreen);
     }
 
-    const buildWin=()=>{
+    const buildWin=(points)=>{
         const winScreen=buildDom(`
             <section class="win">
-                <h1>Win Screen</h1>
+                <h1>You earned the cleanCode triforce</h1>
                 <h3></h3>
                 <button id="restart">Restart</button>
-                <button id="main-menu">Main Menu</button>
+                <button id="main">Main Menu</button>
                 <audio controls autoplay loop>
                   <source src="sprites-link-buenos/onWin.mp3">
                 </audio>
             </section>
         `);
         
-        const mainButton = document.getElementById('main-menu');
+        const mainButton = document.getElementById('main');
         const restartButton = document.getElementById('restart');
         mainButton.addEventListener('click',buildSplashScreen);
         restartButton.addEventListener('click',buildGameScreen);
+        document.querySelector('h3').innerText="Your points:" + points;
 
     }
 

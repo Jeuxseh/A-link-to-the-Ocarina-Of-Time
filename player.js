@@ -31,6 +31,7 @@ class Player{
         this.colisionLeft=colisionIzquierda;
         this.colisionRight=colisionDerecha;
 
+       
 
     }
 
@@ -251,31 +252,33 @@ class Player{
     playerAttack(){
         const attack = new Attack(this.canvas);
         this.attacking.push(attack);
+      
+
     
         switch(this.orientation){
             case 'N':
                 attack.update(this.x,this.y-this.size,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },100);
+                },150);
             break;
             case 'E':
                 attack.update(this.x+this.size,this.y,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },100);
+                },150);
             break;
             case 'S':
                 attack.update(this.x,this.y+this.size,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },100);
+                },150);
             break;
             case 'W':
                 attack.update(this.x-this.size,this.y,this.orientation);
                 setTimeout(() => {
                     this.attacking.splice(0,1)
-                },100);
+                },150);
             break;
         }
         

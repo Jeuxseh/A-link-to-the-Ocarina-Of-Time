@@ -4,10 +4,11 @@ class Game{
     constructor(canvas){
         this.canvas=canvas;
         this.ctx=this.canvas.getContext('2d');
-        this.player=new Player(this.canvas,3);
+        this.player=new Player(this.canvas,9);
         this.coin;
         this.enemies=[];
         this.isGameOver=false;
+        this.attacks=[];
     };
 
     startLoop(){
@@ -113,7 +114,7 @@ class Game{
 
        if(this.player.points>=50 && this.player.checkEnd(this.end)){
             this.isGameOver=true;
-                this.onWin();
+                this.onWin(this.player.points);
         }
 
         if(this.player.checkTrap(this.trampaSierra1)){    
