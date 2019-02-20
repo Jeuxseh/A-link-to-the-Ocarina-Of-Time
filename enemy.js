@@ -29,16 +29,17 @@ class Enemy{
         if(x> this.x){
             this.x+=this.speedX;
             this.orientation='E';
-        }else{
+        }else if(x<this.x){
             this.x-=this.speedX;
             this.orientation='W';
         }
-        if(y>this.y){
+        if(y>this.y+10){
             this.y+=this.speedY;
             this.orientation='S';
-        }else{
+        }else if(y<this.y-10){
             this.y-=this.speedY;
             this.orientation='N';
+            console.log("hola")
         }
           
     };
