@@ -46,6 +46,8 @@ class Player{
     }
 
     getPoints(){
+        let rupeeSound = new Audio("./sprites-link-buenos/rupee.mp3")
+        rupeeSound.play();
         this.points+=10;
     }
 
