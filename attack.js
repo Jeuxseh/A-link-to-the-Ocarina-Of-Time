@@ -12,6 +12,8 @@ class Attack {
         this.espadaRight = espadaDerecha;
 
         this.orientacion;
+        let attackSound = new Audio("./sprites-link-buenos/attack.mp3");
+        attackSound.play(); 
 
      
     }

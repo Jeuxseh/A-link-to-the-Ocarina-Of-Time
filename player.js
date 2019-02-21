@@ -33,10 +33,14 @@ class Player{
 
        
 
+       
+
     }
 
     loseLive(){
         if(this.invincibility===false){
+            let damageSound = new Audio("./sprites-link-buenos/daño.mp3");
+            damageSound.play(); 
             this.lives--;
         }
     }
@@ -252,9 +256,7 @@ class Player{
     playerAttack(){
         const attack = new Attack(this.canvas);
         this.attacking.push(attack);
-      
-
-    
+           
         switch(this.orientation){
             case 'N':
                 attack.update(this.x,this.y-this.size,this.orientation);
