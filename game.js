@@ -22,17 +22,17 @@ class Game{
         this.trampaSierra3= new Trampasierra(this.canvas,715,185);
         this.trampaSierra4= new Trampasierra(this.canvas,415,335);
 
-        this.borderTrap1= new BorderTrap(this.canvas,this.canvas.width/2,0,20,180);
-        this.borderTrap2= new BorderTrap(this.canvas,this.canvas.width/5,0,20,90);
-        this.borderTrap3= new BorderTrap(this.canvas,(this.canvas.width*4)/5,0,20,90);
+        this.borderTrap1= new BorderTrap(this.canvas,this.canvas.width/2,0,20,205);
+        this.borderTrap2= new BorderTrap(this.canvas,this.canvas.width/5,0,20,205);
+        this.borderTrap3= new BorderTrap(this.canvas,(this.canvas.width*4)/5,0,20,205);
 
-        this.borderTrap4= new BorderTrap(this.canvas,this.canvas.width-65,this.canvas.height/5,120,20);
-        this.borderTrap5= new BorderTrap(this.canvas,this.canvas.width-40,this.canvas.height/2,70,20);
-        this.borderTrap6= new BorderTrap(this.canvas,this.canvas.width-65,(this.canvas.height*4)/5,120,20);
+        this.borderTrap4= new BorderTrap(this.canvas,this.canvas.width-65,this.canvas.height/5,150,20);
+        this.borderTrap5= new BorderTrap(this.canvas,this.canvas.width-40,this.canvas.height/2,120,20);
+        this.borderTrap6= new BorderTrap(this.canvas,this.canvas.width-65,(this.canvas.height*4)/5,150,20);
 
-        this.borderTrap7= new BorderTrap(this.canvas,0,(this.canvas.height)/5,190,20);
-        this.borderTrap8= new BorderTrap(this.canvas,0,this.canvas.height/2,90,20);
-        this.borderTrap9= new BorderTrap(this.canvas,0,(this.canvas.height*4)/5,190,20);
+        this.borderTrap7= new BorderTrap(this.canvas,0,(this.canvas.height)/5,245,20);
+        this.borderTrap8= new BorderTrap(this.canvas,0,this.canvas.height/2,200,20);
+        this.borderTrap9= new BorderTrap(this.canvas,0,(this.canvas.height*4)/5,245,20);
 
         const loop =()=>{
             if(Math.random()>0.99){
