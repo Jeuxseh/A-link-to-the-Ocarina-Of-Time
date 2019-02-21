@@ -65,16 +65,17 @@ const main = ()=>{
 
     const buildGameScreen=()=>{
         const gameScreen =buildDom(`
-              
-                <div>
-                    Lives:
-                    <div id="lives">
-                        Lives:   
+              <div class="flex">
+                    <div>
+                        Lives:
+                        <div id="lives">
+                            Lives:   
+                        </div>
                     </div>
-                </div>
-                <div>
-                    Score:
-                    <div id="score">   
+                    <div>
+                        Score:
+                        <div id="score">   
+                        </div>
                     </div>
                 </div>
             <section class="game-screen">

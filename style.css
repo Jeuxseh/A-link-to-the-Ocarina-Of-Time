@@ -16,6 +16,11 @@ html {
 
   .container{
       margin: 0px 0px;
+      font-size:17px;
+      color:white;
+     
+      height: 100vh;
+      background-image: url("sprites-link-buenos/fondozelda.png");
   }
   
   p{
@@ -368,6 +373,12 @@ html {
     border-color: #52c8dd !important;
     transition: all 0.4s ease 0s;
     }
+
+  .flex{
+    display:flex;
+    justify-content: space-around;
+    padding-top:10px;
+  }
 
   
  
