@@ -43,7 +43,7 @@ html {
   
     display:grid;
     grid-template-columns: 30% 20% 20% 30%;
-    grid-template-rows: 10% 50% 20% 20%;
+    grid-template-rows: 30% 50% 20% 1fr;
     grid-template-areas: ". inst inst ."
                          ". text text . "
                          "img img img img"
@@ -70,7 +70,7 @@ html {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    align-self: start;
+    align-self: center;
     grid-area: text;
     color: rgb(7, 6, 6);
   }
@@ -86,6 +86,7 @@ html {
 
   }
   #back-menu{
+    margin-top:30px;
     grid-area: menu;
     justify-self: center;
     color: #494949 !important;
